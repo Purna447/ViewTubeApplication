@@ -1,0 +1,25 @@
+<div class="container">
+    <!-- <code>observable|async</code> -->
+    <mat-card  id="video-viewer" *ngIf = "videoObservable | async; let video">
+        <div class="yt">
+        <youtube-player [videoId]="video.id"></youtube-player>
+    </div>
+     <!-- <a href="https://www.youtube.com/watch?v={{video.id}}"><img  [src]="video.snippet.thumbnails.default.url"></a> -->
+     <div>
+        <mat-card-title>{{video.snippet.title}} </mat-card-title>
+        <mat-card-title><u>Description:</u> </mat-card-title>
+        <mat-card-subtitle>{{video.snippet.description}}</mat-card-subtitle>
+        <mat-card-subtitle> <mat-icon>thumb_up</mat-icon>:{{video.statistics.likeCount}}  <mat-icon>thumb_down</mat-icon>:{{video.statistics.dislikeCount}}  <mat-icon>sms</mat-icon>:{{video.statistics.commentCount}} <mat-icon>screen_share</mat-icon></mat-card-subtitle>
+    </div>
+
+    </mat-card>
+    
+
+
+</div>
+<!-- statistics:
+commentCount: "1"
+dislikeCount: "0"
+favoriteCount: "0"
+likeCount: "4"
+viewCount: "129" -->

@@ -1,0 +1,32 @@
+/* mat-card{
+    width: 200px;
+    height: 350px;
+    
+    display: inline-table;
+    margin: 20px;
+} */
+/* mat-card img{
+    object-fit: cover;
+    width: 80;
+    height: 40%;
+  } */
+  /* .duration
+  {
+    left: 115px;
+    bottom: 50px;
+  } */
+  mat-card
+  {
+    margin-left: 40px;
+    margin-top: 40px;
+    width: 260px;
+    height: 420px;
+    float: left;
+    
+  }
+  .duration
+  {
+    left: 175px;
+    bottom: 50px;
+
+  }

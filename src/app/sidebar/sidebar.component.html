@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === true"
+      >
+    <!-- <mat-toolbar></mat-toolbar> -->
+    <mat-nav-list>
+      <a mat-list-item href="#" ><mat-icon>home</mat-icon>Home</a>
+      <a mat-list-item href="#"><mat-icon>explore</mat-icon>Explore</a>
+      <a mat-list-item href="#"><mat-icon>subscriptions</mat-icon>Subscriptions</a>
+      <a mat-list-item href="#"><mat-icon>video_library</mat-icon>Library</a>
+      <a mat-list-item href="#"><mat-icon>history</mat-icon>History</a>
+    </mat-nav-list>
+    <hr>
+    <p>signin to like videos,<br>comment and subscribe.</p>
+ <a routerLink="authentication/register"><button mat-stroked-button color="warn"><mat-icon>account_circle</mat-icon>sign in</button></a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ "
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>viewtube</span>
+      <mat-form-field  class="search" >
+      <input type="text" matInput placeholder="Search">  
+    </mat-form-field>
+      <mat-icon title="Search">search</mat-icon>  
+      <mat-icon title="Audio Input" class="mic">mic</mat-icon>
+        <mat-icon title="Notification" class="notification">notifications</mat-icon> 
+        <a routerLink="authentication/register" id="upload-button">  <mat-icon title="Create Video" class="symbol">video_call </mat-icon> </a>
+          <mat-icon title="Apps" class="symbol">apps</mat-icon> 
+          <mat-icon title="Manage Profile" class="person">person</mat-icon>
+          
+       
+    </mat-toolbar>
+    <app-chips-bar></app-chips-bar>
+    <app-video-content></app-video-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+ 
+</mat-sidenav-container>

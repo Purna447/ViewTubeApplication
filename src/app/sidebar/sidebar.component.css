@@ -1,0 +1,37 @@
+.sidenav-container {
+  height: 100%;
+}
+.sidenav {
+  width: 200px;
+}
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.search{
+  margin-left: 250px;
+  width: 400px;
+}
+.mic{
+  margin-left: 15px;
+}
+.notification{
+  margin-left: 200px;
+}
+.symbol
+{
+  margin-left: 15px;
+}
+.child{
+  margin-top: 30px;
+}
+a
+{
+  text-decoration: none;
+  color: azure;
+  bottom: 50%;
+}

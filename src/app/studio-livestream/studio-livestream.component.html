@@ -1,0 +1,87 @@
+<div>
+    <h1>Live Stream Event</h1>
+    <form [formGroup]="liveStreamForm" (ngSubmit)="onSubmit()" backgroundcolor="red">
+        
+        <label for="title">Event Title: </label>
+        <input id="title" type="text" formControlName="title" >
+    
+        <div *ngIf="title.invalid && (title.dirty||title.touched)" class="alert alert-danger">
+            <div *ngIf="title.errors?.['required']">
+                Title is required.
+            </div>
+            <div *ngIf="title.errors?.['minlength']">
+                Title should have minimum of 3 characters.
+            </div>
+           
+        </div>
+    
+    
+    <div>
+        <label for="StartDate">Event Start Date: </label>
+        <input id="StartDate" type="date" formControlName="StartDate" >
+    </div>
+    <div *ngIf="StartDate.invalid && (StartDate.dirty||StartDate.touched)" class="alert alert-danger">
+        <div *ngIf="StartDate.errors?.['required']">
+            Event Start Date is required.
+        </div>
+        <div *ngIf="StartDate.errors?.['strtdt']">
+            Start Date Must be greater than or equal to todays date
+        </div>
+        </div>
+    <div>
+        <label for="StartTime">Start Time: </label>
+        <input id="StartTime" type="time" formControlName="StartTime" >
+    </div>
+    <div *ngIf="StartTime.invalid && (StartTime.dirty||StartTime.touched)" class="alert alert-danger">
+        <div *ngIf="StartTime.errors?.['required']">
+            Event Start Time is required.
+        </div>
+        </div>
+    
+    <div>
+        <label for="EndDate">End Date: </label>
+        <input id="EndDate" type="date" formControlName="EndDate" >
+    </div>
+    <div *ngIf="EndDate.invalid && (EndDate.dirty||EndDate.touched)" class="alert alert-danger">
+        <div *ngIf="EndDate.errors?.['required']">
+            Event End Date is required.
+        </div>
+        </div>
+    
+    <div>
+        <label for="EndTime">End Time: </label>
+        <input id="EndTime" type="time" formControlName="EndTime" >
+    </div>
+    <div *ngIf="EndTime.invalid && (EndTime.dirty||EndTime.touched)" class="alert alert-danger">
+        <div *ngIf="EndTime.errors?.['required']">
+            Event End Time is required.
+        </div>
+        </div>
+    
+    <div>
+        <label for="details">Event Details: </label>
+        <input id="details" type="text area" formControlName="details" >
+    </div>
+    <div *ngIf="details.invalid && (details.dirty||details.touched)" class="alert alert-danger">
+        <div *ngIf="details.errors?.['required']">
+            Details are mandatory
+        </div>
+        <div *ngIf="details.errors?.['minlength']">
+            Deatils should have minimum of 10 characters.
+        </div>
+       
+    </div>
+    <p>Guest List</p>
+    <div class="chip">
+        Hushnoon
+        </div>
+        <div class="chips">
+            purna
+            </div>
+    <div><button type="submit" [disabled]="!liveStreamForm.valid">Submit</button></div>
+        </form>
+        </div>
+    
+        
+    <!-- 
+    <button (click)="updateProfile() ">Update Profile</button> -->

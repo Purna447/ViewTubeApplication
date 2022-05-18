@@ -1,0 +1,28 @@
+<div id="login">
+<mat-card>
+    
+        <h3>Register...</h3>
+        <form>
+        <div>
+            
+        <input type="text" #code1 placeholder="Enter user name">
+         </div>
+         <div>
+        <input type="password" #code2 placeholder="Enter password">
+        </div>
+        <div>
+        <input type="password" #code3 placeholder="Confirm Password">
+    </div>
+        <div>
+        <button color="primary" mat-raised-button (click)="check(code2.value,code3.value)">Register</button>
+        
+        <p>sign in, <br>if u have an account already</p>
+    <button color="primary" mat-raised-button (click)="login()">Login</button>
+    </div>
+    <router-outlet></router-outlet>
+    
+</form>
+</mat-card>
+
+</div>
+    

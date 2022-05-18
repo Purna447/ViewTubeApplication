@@ -1,0 +1,155 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h1 class="page-title">Upload Here</h1>
+            <form #registerForm="ngForm" >
+                <div class="form-group">
+                    <label for="url">URL*:</label>
+                    <input type="text" class="form-control" [(ngModel)]="formData.url" name="url" #url="ngModel"
+                        placeholder="enter url" required />
+                </div>
+                <div *ngIf="url.invalid && (url.dirty || url.touched)" class="alert alert-danger">
+                    <div *ngIf="url.errors?.['required']">
+                        URL is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title*:</label>
+                    <input type="text" class="form-control" [(ngModel)]="formData.title" name="title" #title="ngModel"
+                        placeholder="enter title" required />
+                </div>
+                <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                    <div *ngIf="title.errors?.['required']">
+                        Title is required
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="description">Description*:</label>
+                    <input type="text" class="form-control" [(ngModel)]="formData.description" name="description"
+                        #description="ngModel" placeholder="enter description here..." required />
+                </div>
+                <div *ngIf="description.invalid && (description.dirty || description.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="description.errors?.['required']">
+                        Description should not be empty
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Duration*:</label>
+                    <input type="time" class="form-control" [(ngModel)]="formData.duration" name="duration"
+                        #duration="ngModel" required />
+
+                </div>
+                <div *ngIf="duration.invalid && (duration.dirty || duration.touched)" class="alert alert-danger">
+                    <div *ngIf="duration.errors?.['required']">
+                        Duration is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="chtitle">Channel Title*:</label>
+                    <input type="chtitle" class="form-control" [(ngModel)]="formData.chtitle" name="chtitle"
+                        #chtitle="ngModel" placeholder="Enter channel Name" required />
+                </div>
+                <div *ngIf="chtitle.invalid && (chtitle.dirty || chtitle.touched)" class="alert alert-danger">
+                    <div *ngIf="chtitle.errors?.['required']">
+                        Channel Title is Required
+                    </div>
+                </div>
+                <pre>       </pre>
+                <div class="form-group">
+                    <label for="">Audience Type:</label><br>
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">Yes, it is made for kids</mat-radio-button>
+                        <mat-radio-button value="2">Not for kids</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <pre>       </pre>
+                <div>
+                    <label for="">Age Restriction:</label><br>
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">Yes, restrict my videos to viewers age above 18</mat-radio-button>
+                        <mat-radio-button value="2">No, don't Restrict my videos to viewers above 18</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <pre>       </pre>
+                <div class="form-group">
+                    <label for="">Recording Date</label>
+                    <input type="date" class="form-control" [(ngModel)]="formData.duration" name="duration"
+                        #duration="ngModel" required />
+                </div>
+                <pre>       </pre>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Loaction</mat-label>
+                        <mat-select>
+                            <mat-option value="one">Hyderabad</mat-option>
+                            <mat-option value="two">Warangal</mat-option>
+                            <mat-option value="three">delhi</mat-option>
+                            <mat-option value="four">chennai</mat-option>
+                            <mat-option value="five">kolkata</mat-option>
+                            <mat-option value="six">jangaon</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label required>License</mat-label>
+                        <mat-select>
+                            <mat-option value="one">Standard ViewTube License</mat-option>
+                            <mat-option value="two">Creative CommonLicense</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label required>Distribution</mat-label>
+                        <mat-select>
+                            <mat-option value="one">EveryWhere</mat-option>
+                            <mat-option value="two">Make this video available only on monetized platforms</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label required>Video Category</mat-label>
+                        <mat-select>
+                            <mat-option value="one">Film & Animation</mat-option>
+                            <mat-option value="two">Autos & Vehicles</mat-option>
+                            <mat-option value="one">Music</mat-option>
+                            <mat-option value="two">Pets And Animals</mat-option>
+                            <mat-option value="one">sports</mat-option>
+                            <mat-option value="two">Travel and Events</mat-option>
+                            <mat-option value="one">Gaming</mat-option>
+                            <mat-option value="two">People & Blogs</mat-option>
+                            <mat-option value="two">Comedy</mat-option>
+                            <mat-option value="one">Entertainment</mat-option>
+                            <mat-option value="two">News & Politics</mat-option>
+                            <mat-option value="one">Howto & Style</mat-option>
+                            <mat-option value="two">Education</mat-option>
+                            <mat-option value="one">Science & Technology</mat-option>
+                            <mat-option value="two">Nonprofits & Activism</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="">Visibility:</label><br>
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">Private</mat-radio-button>
+                        <mat-radio-button value="2">Public</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <pre>
+       </pre>
+                <button type="submit" class="btn btn-warning" [disabled]="!registerForm.form.valid" (click)="alert(registerForm.value)">
+                    Upload
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
